@@ -36,38 +36,126 @@ function RequestHistory() {
 	}
 
 	return (
-		<div className='task-history-container'>
+		<div
+			style={{
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				padding: '20px',
+				backgroundColor: '#f0f0f0',
+				borderRadius: '10px',
+				boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+			}}
+		>
 			<Error message={error} />
-			<h3>История обращений</h3>
+			<h3 style={{ marginBottom: '20px' }}>История обращений</h3>
 			{request.length > 0 ? (
-				<table className='task-table'>
+				<table
+					style={{
+						borderCollapse: 'collapse',
+						width: '100%',
+						backgroundColor: 'white',
+						boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+						borderRadius: '5px',
+					}}
+				>
 					<thead>
 						<tr>
-							<th>№</th>
-							<th>ФИО</th>
-							<th>Машина</th>
-							<th>Дата бронирования</th>
-							<th>Статус</th>
-							<th>Email</th>
-							<th>Телефон</th>
+							<th
+								style={{
+									border: '1px solid #ddd',
+									padding: '8px',
+									backgroundColor: '#f5f5f5',
+								}}
+							>
+								№
+							</th>
+							<th
+								style={{
+									border: '1px solid #ddd',
+									padding: '8px',
+									backgroundColor: '#f5f5f5',
+								}}
+							>
+								ФИО
+							</th>
+							<th
+								style={{
+									border: '1px solid #ddd',
+									padding: '8px',
+									backgroundColor: '#f5f5f5',
+								}}
+							>
+								Машина
+							</th>
+							<th
+								style={{
+									border: '1px solid #ddd',
+									padding: '8px',
+									backgroundColor: '#f5f5f5',
+								}}
+							>
+								Дата бронирования
+							</th>
+							<th
+								style={{
+									border: '1px solid #ddd',
+									padding: '8px',
+									backgroundColor: '#f5f5f5',
+								}}
+							>
+								Статус
+							</th>
+							<th
+								style={{
+									border: '1px solid #ddd',
+									padding: '8px',
+									backgroundColor: '#f5f5f5',
+								}}
+							>
+								Email
+							</th>
+							<th
+								style={{
+									border: '1px solid #ddd',
+									padding: '8px',
+									backgroundColor: '#f5f5f5',
+								}}
+							>
+								Телефон
+							</th>
 						</tr>
 					</thead>
 					<tbody>
 						{request.map(req => (
 							<tr key={req.req_id}>
-								<td>{req.id}</td>
-								<td>{req.full_name}</td>
-								<td>{req.car}</td>
-								<td>{req.data}</td>
-								<td>{req.status}</td>
-								<td>{req.email}</td>
-								<td>{req.phone}</td>
+								<td style={{ border: '1px solid #ddd', padding: '8px' }}>
+									{req.id}
+								</td>
+								<td style={{ border: '1px solid #ddd', padding: '8px' }}>
+									{req.full_name}
+								</td>
+								<td style={{ border: '1px solid #ddd', padding: '8px' }}>
+									{req.car}
+								</td>
+								<td style={{ border: '1px solid #ddd', padding: '8px' }}>
+									{req.data}
+								</td>
+								<td style={{ border: '1px solid #ddd', padding: '8px' }}>
+									{req.status}
+								</td>
+								<td style={{ border: '1px solid #ddd', padding: '8px' }}>
+									{req.email}
+								</td>
+								<td style={{ border: '1px solid #ddd', padding: '8px' }}>
+									{req.phone}
+								</td>
 							</tr>
 						))}
 					</tbody>
 				</table>
 			) : (
-				<p>Нет обращений</p>
+				<p style={{ color: 'gray' }}>Нет обращений.</p>
 			)}
 		</div>
 	)

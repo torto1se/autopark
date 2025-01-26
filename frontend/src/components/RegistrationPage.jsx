@@ -31,47 +31,114 @@ function RegistrationPage() {
 		const data = await response.json()
 		if (response.ok) {
 			console.log('Успешная регистрация')
+			// Редирект на страницу входа или другую после регистрации
 		} else {
 			setError(data.error)
 		}
 	}
 
 	return (
-		<div>
+		<div
+			style={{
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				padding: '20px',
+				borderRadius: '10px',
+				boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+			}}
+		>
 			<Error message={error} />
-			<div>
-				<input
-					type='text'
-					value={full_name}
-					placeholder='ФИО'
-					onChange={e => setFull_name(e.target.value)}
-				/>
-				<input
-					type='text'
-					value={driver_license}
-					placeholder='Водительскакя лицензия'
-					onChange={e => setDriver_license(e.target.value)}
-				/>
-				<input
-					type='text'
-					value={phone}
-					placeholder='Телефон'
-					onChange={e => setPhone(e.target.value)}
-				/>
-				<input
-					type='email'
-					value={email}
-					placeholder='Почта'
-					onChange={e => setEmail(e.target.value)}
-				/>
-				<input
-					type='password'
-					value={password}
-					placeholder='Пароль'
-					onChange={e => setPassword(e.target.value)}
-				/>
-				<button onClick={handleRegistration}>Зарегистрировтаься</button>
-			</div>
+			<h3 style={{ marginBottom: '20px' }}>Регистрация</h3>
+
+			<input
+				type='text'
+				value={full_name}
+				placeholder='ФИО'
+				onChange={e => setFull_name(e.target.value)}
+				style={{
+					padding: '10px',
+					width: '100%',
+					maxWidth: '300px',
+					marginBottom: '15px',
+					borderRadius: '5px',
+					border: '1px solid #ccc',
+				}}
+			/>
+
+			<input
+				type='text'
+				value={driver_license}
+				placeholder='Водительская лицензия'
+				onChange={e => setDriver_license(e.target.value)}
+				style={{
+					padding: '10px',
+					width: '100%',
+					maxWidth: '300px',
+					marginBottom: '15px',
+					borderRadius: '5px',
+					border: '1px solid #ccc',
+				}}
+			/>
+
+			<input
+				type='text'
+				value={phone}
+				placeholder='Телефон'
+				onChange={e => setPhone(e.target.value)}
+				style={{
+					padding: '10px',
+					width: '100%',
+					maxWidth: '300px',
+					marginBottom: '15px',
+					borderRadius: '5px',
+					border: '1px solid #ccc',
+				}}
+			/>
+
+			<input
+				type='email'
+				value={email}
+				placeholder='Почта'
+				onChange={e => setEmail(e.target.value)}
+				style={{
+					padding: '10px',
+					width: '100%',
+					maxWidth: '300px',
+					marginBottom: '15px',
+					borderRadius: '5px',
+					border: '1px solid #ccc',
+				}}
+			/>
+
+			<input
+				type='password'
+				value={password}
+				placeholder='Пароль'
+				onChange={e => setPassword(e.target.value)}
+				style={{
+					padding: '10px',
+					width: '100%',
+					maxWidth: '300px',
+					marginBottom: '15px',
+					borderRadius: '5px',
+					border: '1px solid #ccc',
+				}}
+			/>
+
+			<button
+				onClick={handleRegistration}
+				style={{
+					padding: '10px 20px',
+					backgroundColor: '#007bff',
+					color: 'white',
+					border: 'none',
+					borderRadius: '5px',
+					cursor: 'pointer',
+				}}
+			>
+				Зарегистрироваться
+			</button>
 		</div>
 	)
 }
